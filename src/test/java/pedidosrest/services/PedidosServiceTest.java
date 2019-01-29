@@ -2,10 +2,10 @@ package pedidosrest.services;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import pedidosrest.entity.Pedidos;
 import pedidosrest.repository.PedidosRepository;
 
@@ -16,13 +16,13 @@ import static pedidosrest.TestBuilders.buildNovoPedido;
 public class PedidosServiceTest {
 
     @Mock
-    PedidosRepository pedidosRepository;
+    private PedidosRepository pedidosRepository;
 
     @Mock
-    RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
-    @Autowired
-    PedidosService pedidosService;
+    @InjectMocks
+    private PedidosService pedidosService;
 
     @Before
     public void setUp() {

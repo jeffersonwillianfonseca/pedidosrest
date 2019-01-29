@@ -2,10 +2,7 @@ package pedidosrest.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import pedidosrest.entity.Endereco;
 import pedidosrest.repository.EnderecoRepository;
@@ -21,7 +18,7 @@ public class EntregasServiceTest {
     @Mock
     private EnderecoRepository enderecoRepository;
 
-    @Autowired
+    @InjectMocks
     private EntregasService entregasService;
 
     @Captor
