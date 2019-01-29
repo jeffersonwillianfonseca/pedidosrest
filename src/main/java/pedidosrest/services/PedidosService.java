@@ -13,10 +13,10 @@ import pedidosrest.repository.PedidosRepository;
 public class PedidosService {
 
     @Autowired
-    PedidosRepository pedidosRepository;
+    private PedidosRepository pedidosRepository;
 
     @Autowired
-    RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
     @Value("${spring.rabbitmq.exchanges.pedidosexchange}")
     private String pedidosExchange;

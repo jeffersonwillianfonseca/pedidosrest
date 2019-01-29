@@ -18,7 +18,7 @@ import static org.springframework.amqp.core.ExchangeTypes.FANOUT;
 public class EntregasService {
 
     @Autowired
-    EnderecoRepository enderecoRepository;
+    private EnderecoRepository enderecoRepository;
 
     private Logger logger = LoggerFactory.getLogger(EntregasService.class);
 
