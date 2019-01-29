@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAutoConfiguration
 public class PedidosRestApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PedidosRestApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PedidosRestApplication.class, args);
+    }
 
 }
 

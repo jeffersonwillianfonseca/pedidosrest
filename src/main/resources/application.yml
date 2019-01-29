@@ -1,21 +1,21 @@
 server:
-    port: 9000
+  port: 9000
 spring:
-    datasource:
-        driver-class-name: org.h2.Driver
-        password: admin
-        url: jdbc:h2:file:~/h2db
-        username: h2sa
-    h2:
-        console:
-            enabled: true
-            path: /h2
-    rabbitmq:
-        host: localhost
-        password: guest
-        port: 5672
-        username: guest
-        filas:
-            sendpedidos: pedidos.queue.prod
-        exchanges:
-            pedidosexchange: pedidos.exchange.prod
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: admin
+    url: jdbc:h2:file:~/h2db
+    username: h2sa
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+    filas:
+      sendpedidos: pedidos.queue.prod
+    exchanges:
+      pedidosexchange: pedidos.exchange.prod

@@ -1,6 +1,5 @@
 package pedidosrest.services;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.Exchange;
@@ -36,7 +35,7 @@ public class EntregasService {
     )
     public void enderecosEntregaReceiver(Pedidos pedido) {
         Endereco enderecoEntrega = new Endereco();
-        if(pedido.getIdPedido() != null && pedido.getEndereco() != null) {
+        if (pedido.getIdPedido() != null && pedido.getEndereco() != null) {
             enderecoEntrega.setEndereco(pedido.getEndereco());
             enderecoEntrega.setIdPedido(pedido.getIdPedido());
             enderecoRepository.save(enderecoEntrega);

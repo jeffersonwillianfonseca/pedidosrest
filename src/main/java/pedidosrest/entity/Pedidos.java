@@ -13,7 +13,7 @@ public class Pedidos implements Serializable {
 
     private Long codCliente;
 
-    @ElementCollection(targetClass=Long.class)
+    @ElementCollection(targetClass = Long.class)
     private List<Long> codigosProduto;
 
     private Double valorTotal;

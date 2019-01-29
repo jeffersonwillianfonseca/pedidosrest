@@ -1,18 +1,11 @@
 package pedidosrest.controller;
 
-import org.hibernate.service.spi.InjectService;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -24,9 +17,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static pedidosrest.TestBuilders.asJsonString;
-import static pedidosrest.TestBuilders.buildIterablePedidos;
-import static pedidosrest.TestBuilders.buildNovoPedido;
+import static pedidosrest.TestBuilders.*;
 
 public class PedidosControllerTest {
 
@@ -44,15 +35,16 @@ public class PedidosControllerTest {
         this.mockMvc = MockMvcBuilders.standaloneSetup(pedidosController)
                 .build();
     }
+
     @Test
     public void salvarPedido() throws Exception {
         when(pedidosService.salvarPedido(any(Pedidos.class))).thenReturn(true);
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-        .post("/pedidos")
-        .content(asJsonString(buildNovoPedido(true)))
-        .contentType(APPLICATION_JSON))
+                .post("/pedidos")
+                .content(asJsonString(buildNovoPedido(true)))
+                .contentType(APPLICATION_JSON))
                 .andExpect(status().isOk())
-        .andReturn();
+                .andReturn();
         assertEquals(result.getResponse().getContentAsString(),
                 "Inserido com sucesso");
     }

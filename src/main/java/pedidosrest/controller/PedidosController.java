@@ -26,7 +26,7 @@ public class PedidosController {
     }
 
     @GetMapping
-    public Iterable<Pedidos> listarTodosPedidos(){
+    public Iterable<Pedidos> listarTodosPedidos() {
         return pedidosService.findAllPedidos();
     }
 }
