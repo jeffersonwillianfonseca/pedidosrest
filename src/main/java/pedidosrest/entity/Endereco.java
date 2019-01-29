@@ -1,8 +1,12 @@
 package pedidosrest.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity(name = "ENDERECO_ENTREGA")
+@Getter @Setter
 public class Endereco {
 
     @Id
@@ -14,27 +18,4 @@ public class Endereco {
 
     private Long idPedido;
 
-    public Long getIdEndEntrega() {
-        return idEndEntrega;
-    }
-
-    public void setIdEndEntrega(Long idEndEntrega) {
-        this.idEndEntrega = idEndEntrega;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public Long getIdPedido() {
-        return idPedido;
-    }
-
-    public void setIdPedido(Long idPedido) {
-        this.idPedido = idPedido;
-    }
 }

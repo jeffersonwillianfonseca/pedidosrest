@@ -1,10 +1,14 @@
 package pedidosrest.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity(name = "PEDIDOS")
+@Getter @Setter
 public class Pedidos implements Serializable {
 
     @Id
@@ -19,44 +23,4 @@ public class Pedidos implements Serializable {
     private Double valorTotal;
 
     private String endereco;
-
-    public Long getIdPedido() {
-        return idPedido;
-    }
-
-    public void setIdPedido(Long idPedido) {
-        this.idPedido = idPedido;
-    }
-
-    public Long getCodCliente() {
-        return codCliente;
-    }
-
-    public void setCodCliente(Long codCliente) {
-        this.codCliente = codCliente;
-    }
-
-    public List<Long> getCodigosProduto() {
-        return codigosProduto;
-    }
-
-    public void setCodigosProduto(List<Long> codigosProduto) {
-        this.codigosProduto = codigosProduto;
-    }
-
-    public Double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(Double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
 }
